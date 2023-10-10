@@ -1,13 +1,14 @@
 import { QueryResult } from "pg"
 
-export type Os = 'Windows' | 'Linux' | 'MacOS'
+export type OS = 'Windows' | 'Linux' | 'MacOS'
 
 export type DevelopersInfo = {
 id: number
 developerSince: Date
-preferredOs: Os
+preferredOs: OS
 developerId: number
 }
-export type DeveloperCreate = Omit<DevelopersInfo, "id"> 
-export type DeveloperUpdate = Partial<DevelopersInfo>
-export type DeveloperResult = QueryResult<DevelopersInfo>
+//MUDEI O Os pra OS
+export type DevelopersInfoCreate = Omit<DevelopersInfo, "id"> 
+export type DevelopersInfoUpdate = Partial<DevelopersInfo>
+export type DevelopersInfoResult = QueryResult<DevelopersInfo>

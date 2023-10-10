@@ -19,7 +19,7 @@ export const readDeveloperByIdService = async (id: string): Promise<Developer> =
     "d". "name" AS "developerName",
     "d". "email" AS "developerEmail",
     "di". "developerSince" AS "developerinfoDeveloperSince",
-    "di". "preferredOs" AS "developerInfoPreferredOS",
+    "di". "preferredOS" AS "developerInfoPreferredOS"
     FROM "developers" AS "d"
     LEFT JOIN "developerInfos" AS "di"
     ON "di"."developerId" = "d"."id"
@@ -32,7 +32,7 @@ export const readDeveloperByIdService = async (id: string): Promise<Developer> =
 
 export const updateDeveloperService = async (id: string, data: DeveloperUpdate): Promise<Developer> => {
     const queryFormat: string = format(
-        'UPDATE "developers" SET ($i) = ROW ($L) WHERE "id" = $1 RETURNING *;',
+        'UPDATE "developers" SET (%I) = ROW (%L) WHERE "id" = $1 RETURNING *;',
         Object.keys(data),
         Object.values(data)
     )

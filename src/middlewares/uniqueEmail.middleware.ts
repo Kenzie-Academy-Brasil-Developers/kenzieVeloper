@@ -11,11 +11,10 @@ export const uniqueEmail = async (req: Request, res: Response, next: NextFunctio
       'SELECT * FROM "developers" WHERE "email" = $1;',
       [email] 
     )
-    console.log(query)
   
     if(query.rowCount) {
       throw new appError('Email already exists.', 409)
-      console.log('entrei')
+
     }
   
     return next()

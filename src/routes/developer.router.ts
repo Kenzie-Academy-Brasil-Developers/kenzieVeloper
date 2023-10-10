@@ -10,7 +10,9 @@ export const developerRouter: Router = Router()
 
 developerRouter.post('/', uniqueEmail, createDeveloperController)
 
-developerRouter.get('/:id', verifyClientId, readDeveloperByIDController)
+developerRouter.use('/:id', verifyClientId)
+
+developerRouter.get('/:id', readDeveloperByIDController)
 
 developerRouter.patch('/:id' , uniqueEmail, uniqueUsername, updateDeveloperController)
 

@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS "developers" (
 CREATE TABLE IF NOT EXISTS "developerInfos" (
 "id" SERIAL PRIMARY KEY,
 "developerSince" DATE NOT NULL,
-"preferredOs" "OS",
+"preferredOS" "OS",
 "developerId" INTEGER UNIQUE NOT NULL,
 FOREIGN KEY ("developerId")
 REFERENCES "developers"("id")

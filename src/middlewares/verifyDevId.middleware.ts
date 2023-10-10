@@ -5,7 +5,6 @@ import appError from "../errors/App.error"
 
 export const verifyClientId = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     const { id } = req.params
-    console.log(id)
   
     const queryResult: DeveloperResult = await client.query(
       'SELECT * FROM "developers" WHERE "id" = $1;',
