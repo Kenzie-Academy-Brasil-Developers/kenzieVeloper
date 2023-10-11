@@ -12,7 +12,7 @@ export const verifyClientId = async (req: Request, res: Response, next: NextFunc
     )
   
     if(!queryResult.rowCount) {
-      throw new appError('developers not found', 404)
+      throw new appError('Developers not found.', 404)
     }
   
     const foundDeveloper: Developer = queryResult.rows[0]
