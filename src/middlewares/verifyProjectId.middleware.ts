@@ -4,7 +4,7 @@ import appError from "../errors/App.error"
 import { Projects, ProjectsResult } from "../interfaces/projects.interface"
 
 export const verifyprojectsId = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
-    const { developerId } = req.body
+    const { developerId } = req.body 
   
     const queryResult: ProjectsResult = await client.query(
       'SELECT * FROM "developers" WHERE "id" = $1;',

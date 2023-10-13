@@ -5,7 +5,7 @@ export type OS = 'Windows' | 'Linux' | 'MacOS'
 export type DevelopersInfo = {
 id: number
 developerSince: Date
-preferredOs: OS
+preferredOs: "Windows" | "Linux" | "MacOS",
 developerId: number
 }
 //MUDEI O Os pra OS

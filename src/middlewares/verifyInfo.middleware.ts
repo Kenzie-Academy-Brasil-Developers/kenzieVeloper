@@ -11,7 +11,7 @@ export const verifyInfo = async (req: Request, res: Response, next: NextFunction
     )
   
     if(query.rowCount) {
-      throw new appError('Invalid OS option.', 409)
+      throw new appError('Developer infos already exists.', 409)
 
     }
   

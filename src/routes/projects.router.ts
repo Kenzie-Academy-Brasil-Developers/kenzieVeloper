@@ -6,6 +6,8 @@ import { verifyprojectsId } from "../middlewares/verifyProjectId.middleware";
 
 export const projectsRouter: Router = Router()
 
+projectsRouter.use(verifyprojectsId)
+
 projectsRouter.post('/', verifyprojectsId,  createProjectsController)
 
 projectsRouter.get('/:id', readProjectsByIDController)
